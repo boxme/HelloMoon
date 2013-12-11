@@ -19,6 +19,12 @@ public class HelloMoonFragment extends Fragment {
 	private Uri resourceUri = Uri.parse("android.resource://" + "com.bignerdranch.android.hellomoon/raw/sample_mpeg4");
 	
 	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setRetainInstance(true);							//Preserve the fragment upon rotation.
+	}
+	
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent, 
 			  				Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_hello_moon, parent);
